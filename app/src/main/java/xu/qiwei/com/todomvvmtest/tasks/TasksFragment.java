@@ -61,16 +61,17 @@ public class TasksFragment extends Fragment {
     }
 
     private void setListAdapter() {
-        TaskAdapter taskAdapter = new TaskAdapter(new ArrayList<Task>(0));
+        TaskAdapter taskAdapter = new TaskAdapter(new ArrayList<Task>(0),(TaskItemNavigator) getActivity());
         binding.taskListview.setAdapter(taskAdapter);
     }
 
     public static class TaskAdapter extends BaseAdapter {
-
+        private TaskItemNavigator taskItemNavigator;
         private List<Task> tasks;
 
-        public TaskAdapter(List<Task> tasks) {
+        public TaskAdapter(List<Task> tasks,TaskItemNavigator taskItemNavigator) {
             this.tasks = tasks;
+            this.taskItemNavigator = taskItemNavigator;
         }
 
         @Override
@@ -97,7 +98,7 @@ public class TasksFragment extends Fragment {
             } else {
                 binding = DataBindingUtil.getBinding(view);
             }
-            TaskItemViewModel taskItemViewModel = new TaskItemViewModel();
+            TaskItemViewModel taskItemViewModel = new TaskItemViewModel(taskItemNavigator);
             binding.setViewmodel(taskItemViewModel);
             taskItemViewModel.setTask(task);
             return binding.getRoot();

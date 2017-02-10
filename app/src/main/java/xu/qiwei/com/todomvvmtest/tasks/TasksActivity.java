@@ -1,13 +1,15 @@
 package xu.qiwei.com.todomvvmtest.tasks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
 import xu.qiwei.com.todomvvmtest.R;
 import xu.qiwei.com.todomvvmtest.ViewHolder;
+import xu.qiwei.com.todomvvmtest.details.TaskDetailActivity;
 
-public class TasksActivity extends AppCompatActivity {
+public class TasksActivity extends AppCompatActivity implements TaskItemNavigator{
 
     private static final String TASKLIST_VIEWMODEL_TAG="TASKLIST_VIEWMODEL_TAG";
     @Override
@@ -29,7 +31,7 @@ public class TasksActivity extends AppCompatActivity {
         }
         else
         {
-            TasksListViewModel viewModel = new TasksListViewModel();
+            TasksListViewModel viewModel = new TasksListViewModel(this);
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),ViewHolder.createViewModelContiner(viewModel),TASKLIST_VIEWMODEL_TAG);
             return viewModel;
         }
@@ -42,5 +44,10 @@ public class TasksActivity extends AppCompatActivity {
         }
         ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),R.id.task_fragmentlayout,tasksFragment);
         return tasksFragment;
+    }
+
+    @Override
+    public void toTaskDetail() {
+        startActivity(new Intent(this, TaskDetailActivity.class));
     }
 }

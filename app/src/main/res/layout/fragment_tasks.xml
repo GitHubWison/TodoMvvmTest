@@ -24,13 +24,22 @@
             android:onClick="@{() ->viewmodel.onTestButtonClicked()}"
             android:id="@+id/test_button"
             />
-        <ListView
+        <android.support.v4.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/task_listview"
             android:layout_below="@id/test_button"
-            app:items="@{viewmodel.items}"
-            />
+            app:onRefresh="@{viewmodel}"
+            app:refreshing="@{viewmodel.isRefreshing}"
+            >
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/task_listview"
+
+                app:items="@{viewmodel.items}"
+                />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
 
     </RelativeLayout>
 </layout>

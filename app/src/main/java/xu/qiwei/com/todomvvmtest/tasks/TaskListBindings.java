@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TaskListBindings {
     @SuppressWarnings("unchecked")
-    @BindingAdapter("app:items")
+    @BindingAdapter("items")
     public static final void setListItems(ListView listView, List<Task> tasks)
     {
         TasksFragment.TaskAdapter adapter = (TasksFragment.TaskAdapter)listView.getAdapter();
