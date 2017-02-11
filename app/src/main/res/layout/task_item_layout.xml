@@ -8,25 +8,39 @@
             type="xu.qiwei.com.todomvvmtest.tasks.TaskItemViewModel" />
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:onClick="@{()->viewmodel.toTaskDetail()}"
         >
-
-        <TextView
-            android:id="@+id/title_textview"
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/todo_checkbox"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:text="@{viewmodel.title}" />
+            android:checked="@={viewmodel.completed}"
 
-        <TextView
-            android:layout_width="match_parent"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_below="@id/title_textview"
-            android:layout_marginTop="5dp"
-            android:text="@{viewmodel.description}" />
-    </RelativeLayout>
+            android:id="@+id/titledesc_linearlayout"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/title_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@{viewmodel.title}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{viewmodel.description}" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 </layout>
 
