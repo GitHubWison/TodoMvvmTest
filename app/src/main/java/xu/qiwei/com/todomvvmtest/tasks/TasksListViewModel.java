@@ -7,9 +7,9 @@ import android.util.Log;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
+import xu.qiwei.com.todomvvmtest.data.source.SourceData;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -21,28 +21,38 @@ public class TasksListViewModel {
     public final ObservableList<Task> items = new ObservableArrayList<>();
     public ObservableField<Boolean> isRefreshing = new ObservableField<>();
     private TaskItemNavigator mTaskItemNavigator;
-    public TasksListViewModel(@NotNull TaskItemNavigator taskItemNavigator) {
+    private SourceData localSourceData;
+    public TasksListViewModel(@NotNull TaskItemNavigator taskItemNavigator, SourceData localSourceData) {
         mTaskItemNavigator = checkNotNull(taskItemNavigator);
-
+        this.localSourceData = checkNotNull(localSourceData);
     }
 
     public void loadTasks(){
         isRefreshing.set(true);
-        List<Task> tempTasks = new ArrayList<>();
+    /*    List<Task> tempTasks = new ArrayList<>();
 
         for (int i=0;i<30;i++)
         {
             tempTasks.add(new Task("title"+ new Random().nextInt(10),"desc"+i));
         }
+*/
 
+        List<Task> tasks = localSourceData.getTasks();
+        Log.e("taskslength",tasks.size()+"");
         items.clear();
-        items.addAll(tempTasks);
+        items.addAll(tasks);
         isRefreshing.set(false);
+    }
+    public void addTask(){
+        Task task = new Task("1111","desc1111",false);
+        localSourceData.addTask(task);
+        Log.e("localSourceDataadd","addsuccess");
     }
 
     public void onTestButtonClicked(){
-        Log.e("onTestButtonClicked","onTestButtonClicked");
-        loadTasks();
+
+        addTask();
+        Log.e("addTasklog","addTasksuccess");
 
     }
     public void onpageRefresh(){

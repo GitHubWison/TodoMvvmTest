@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
 import xu.qiwei.com.todomvvmtest.R;
 import xu.qiwei.com.todomvvmtest.ViewHolder;
+import xu.qiwei.com.todomvvmtest.data.source.LocalSourceData;
 import xu.qiwei.com.todomvvmtest.details.TaskDetailActivity;
 
 public class TasksActivity extends AppCompatActivity implements TaskItemNavigator{
@@ -31,7 +32,7 @@ public class TasksActivity extends AppCompatActivity implements TaskItemNavigato
         }
         else
         {
-            TasksListViewModel viewModel = new TasksListViewModel(this);
+            TasksListViewModel viewModel = new TasksListViewModel(this, LocalSourceData.getInstance(this));
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),ViewHolder.createViewModelContiner(viewModel),TASKLIST_VIEWMODEL_TAG);
             return viewModel;
         }
