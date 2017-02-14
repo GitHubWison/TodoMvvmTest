@@ -4,6 +4,7 @@ package xu.qiwei.com.todomvvmtest.tasks;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import xu.qiwei.com.todomvvmtest.R;
 import xu.qiwei.com.todomvvmtest.databinding.FragmentTasksBinding;
 import xu.qiwei.com.todomvvmtest.databinding.TaskItemLayoutBinding;
 
@@ -58,6 +60,18 @@ public class TasksFragment extends Fragment {
 
         setListAdapter();
 
+        setUpFab();
+
+    }
+
+    private void setUpFab() {
+        FloatingActionButton floadActButton = (FloatingActionButton)getActivity().findViewById(R.id.floatacbtn);
+        floadActButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTasksListViewModel.toAddTaskActivity();
+            }
+        });
     }
 
     private void setListAdapter() {

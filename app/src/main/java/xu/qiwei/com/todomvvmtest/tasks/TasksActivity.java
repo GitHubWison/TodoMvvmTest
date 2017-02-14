@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
 import xu.qiwei.com.todomvvmtest.R;
 import xu.qiwei.com.todomvvmtest.ViewHolder;
+import xu.qiwei.com.todomvvmtest.addtask.AddTaskActivity;
 import xu.qiwei.com.todomvvmtest.data.source.LocalSourceData;
 import xu.qiwei.com.todomvvmtest.details.TaskDetailActivity;
 
@@ -50,5 +51,10 @@ public class TasksActivity extends AppCompatActivity implements TaskItemNavigato
     @Override
     public void toTaskDetail() {
         startActivity(new Intent(this, TaskDetailActivity.class));
+    }
+
+    @Override
+    public void toAddTaskActivity() {
+        startActivity(new Intent(this,AddTaskActivity.class));
     }
 }

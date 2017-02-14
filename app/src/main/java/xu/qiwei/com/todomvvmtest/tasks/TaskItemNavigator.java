@@ -6,5 +6,6 @@ package xu.qiwei.com.todomvvmtest.tasks;
 
 public interface TaskItemNavigator {
     public void toTaskDetail();
+    public void toAddTaskActivity();
 
 }
