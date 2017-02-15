@@ -61,6 +61,6 @@ public class TasksListViewModel {
         loadTasks();
     }
     public void toAddTaskActivity(){
-        mTaskItemNavigator.toAddTaskActivity();
+        mTaskItemNavigator.toTaskDetail();
     }
 }
