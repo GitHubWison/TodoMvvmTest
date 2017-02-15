@@ -1,5 +1,7 @@
 package xu.qiwei.com.todomvvmtest.tasks;
 
+import java.util.UUID;
+
 /**
  * Created by xuqiwei on 17-2-10.
  */
@@ -8,6 +10,7 @@ public class Task {
     private String title;
     private String description;
     private boolean completed;
+    private String taskid;
 
     public Task(String title, String description) {
         this.title = title;
@@ -17,7 +20,23 @@ public class Task {
     public Task(String title, String description, boolean completed) {
         this.title = title;
         this.description = description;
-        this.completed=completed;
+        this.completed = completed;
+        this.taskid = UUID.randomUUID().toString();
+    }
+
+    public Task(String taskid, String title, String description, boolean completed) {
+        this.title = title;
+        this.description = description;
+        this.completed = completed;
+        this.taskid = taskid;
+    }
+
+    public String getTaskid() {
+        return taskid;
+    }
+
+    public void setTaskid(String taskid) {
+        this.taskid = taskid;
     }
 
     public String getTitle() {

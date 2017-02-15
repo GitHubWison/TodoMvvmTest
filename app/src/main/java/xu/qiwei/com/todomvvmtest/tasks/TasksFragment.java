@@ -1,6 +1,7 @@
 package xu.qiwei.com.todomvvmtest.tasks;
 
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import xu.qiwei.com.todomvvmtest.R;
+import xu.qiwei.com.todomvvmtest.data.source.LocalSourceData;
 import xu.qiwei.com.todomvvmtest.databinding.FragmentTasksBinding;
 import xu.qiwei.com.todomvvmtest.databinding.TaskItemLayoutBinding;
 
@@ -75,17 +77,20 @@ public class TasksFragment extends Fragment {
     }
 
     private void setListAdapter() {
-        TaskAdapter taskAdapter = new TaskAdapter(new ArrayList<Task>(0),(TaskItemNavigator) getActivity());
+        TaskAdapter taskAdapter = new TaskAdapter(new ArrayList<Task>(0),getActivity(),(TaskItemNavigator) getActivity());
         binding.taskListview.setAdapter(taskAdapter);
     }
 
     public static class TaskAdapter extends BaseAdapter {
         private TaskItemNavigator taskItemNavigator;
-        private List<Task> tasks;
 
-        public TaskAdapter(List<Task> tasks,TaskItemNavigator taskItemNavigator) {
+        private List<Task> tasks;
+        private Context mContext;
+
+        public TaskAdapter(List<Task> tasks, Context context, TaskItemNavigator taskItemNavigator) {
             this.tasks = tasks;
             this.taskItemNavigator = taskItemNavigator;
+            this.mContext = context;
         }
 
         @Override
@@ -112,7 +117,7 @@ public class TasksFragment extends Fragment {
             } else {
                 binding = DataBindingUtil.getBinding(view);
             }
-            TaskItemViewModel taskItemViewModel = new TaskItemViewModel(taskItemNavigator);
+            TaskItemViewModel taskItemViewModel = new TaskItemViewModel(LocalSourceData.getInstance(mContext),taskItemNavigator);
             binding.setViewmodel(taskItemViewModel);
             taskItemViewModel.setTask(task);
             return binding.getRoot();

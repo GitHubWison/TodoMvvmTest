@@ -38,12 +38,13 @@ public class LocalSourceData implements SourceData{
     public List<Task> getTasks() {
         List<Task> tasks = new ArrayList<>();
         SQLiteDatabase database = db.getReadableDatabase();
-        Cursor c = database.query(TaskEntity.TABLE_NAME,new String[]{TaskEntity.TASK_TITLE,TaskEntity.TASK_DESCRIPTION, TASK_ISCOMPLETE},null,null,null,null,null);
+        Cursor c = database.query(TaskEntity.TABLE_NAME,new String[]{TaskEntity.TASK_ID,TaskEntity.TASK_TITLE,TaskEntity.TASK_DESCRIPTION, TASK_ISCOMPLETE},null,null,null,null,null);
         while (c.moveToNext()){
+            String taskid = c.getString(c.getColumnIndexOrThrow(TaskEntity.TASK_ID));
             String title = c.getString(c.getColumnIndexOrThrow(TaskEntity.TASK_TITLE));
             String desc = c.getString(c.getColumnIndexOrThrow(TaskEntity.TASK_DESCRIPTION));
             boolean iscomplete = c.getInt(c.getColumnIndexOrThrow(TaskEntity.TASK_ISCOMPLETE))==1;
-            Task temp = new Task(title,desc,iscomplete);
+            Task temp = new Task(taskid,title,desc,iscomplete);
             tasks.add(temp);
         }
         if (c!=null) {
@@ -60,8 +61,53 @@ public class LocalSourceData implements SourceData{
         cont.put(TaskEntity.TASK_TITLE,task.getTitle());
         cont.put(TaskEntity.TASK_DESCRIPTION,task.getDescription());
         cont.put(TaskEntity.TASK_ISCOMPLETE,task.isCompleted());
+        cont.put(TaskEntity.TASK_ID,task.getTaskid());
 
         database.insert(TaskEntity.TABLE_NAME,null,cont);
         database.close();
     }
+
+    @Override
+    public void completeTask(Task task) {
+//       1. 先检查数据库中对应的ｔａｓｋ是否被选中
+//       2.如果需要插入的值和数据库中的一样那么就不用做更改
+//        ３．如果需要插入的值和数据库中的不一样则插入数据库
+
+        SQLiteDatabase sqlReadDataBase = db.getReadableDatabase();
+        Cursor cursor = sqlReadDataBase.query(TaskEntity.TABLE_NAME, new String[]{TaskEntity.TASK_ISCOMPLETE},TaskEntity.TASK_ID+" LIKE ?",new String[]{task.getTaskid()},null,null,null);
+        boolean iscomplete = false;
+        while (cursor.moveToNext()){
+            iscomplete = cursor.getInt(cursor.getColumnIndexOrThrow(TaskEntity.TASK_ISCOMPLETE))==1;
+        }
+        if (task.isCompleted()!=iscomplete)
+        {
+            SQLiteDatabase sqLiteDatabase = db.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(TaskEntity.TASK_ISCOMPLETE,true);
+            String selection = TaskEntity.TASK_ID+" LIKE ?";
+            String[] args = new String[]{task.getTaskid()};
+            sqLiteDatabase.update(TaskEntity.TABLE_NAME,contentValues,selection,args);
+            sqLiteDatabase.close();
+
+        }
+        if (cursor!=null) {
+            cursor.close();
+        }
+        sqlReadDataBase.close();
+
+
+    }
+
+    @Override
+    public void activedTask(Task task) {
+        SQLiteDatabase sqLiteDatabase = db.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(TaskEntity.TASK_ISCOMPLETE,false);
+        String selection = TaskEntity.TASK_ID+" LIKE ?";
+        String[] args = new String[]{task.getTaskid()};
+        sqLiteDatabase.update(TaskEntity.TABLE_NAME,contentValues,selection,args);
+        sqLiteDatabase.close();
+    }
+
+
 }

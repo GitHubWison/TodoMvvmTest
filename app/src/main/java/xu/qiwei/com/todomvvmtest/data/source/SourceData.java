@@ -11,4 +11,7 @@ import xu.qiwei.com.todomvvmtest.tasks.Task;
 public interface SourceData {
     public List<Task> getTasks();
     public void addTask(Task task);
+    public void completeTask(Task task);
+    public void activedTask(Task task);
+
 }
