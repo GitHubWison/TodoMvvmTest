@@ -11,6 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         >
         <CheckBox
             android:id="@+id/todo_checkbox"
@@ -29,6 +30,7 @@
                 android:id="@+id/title_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="@{()->viewmodel.toTaskDetail()}"
                 android:text="@{viewmodel.title}" />
 
             <TextView

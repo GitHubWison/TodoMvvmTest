@@ -59,5 +59,6 @@ public class TaskDetailFragment extends Fragment {
     public void onResume() {
         super.onResume();
         taskDetailViewModel.loadTasks();
+//        taskDetailViewModel.loadPersons();
     }
 }

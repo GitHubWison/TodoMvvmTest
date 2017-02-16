@@ -19,8 +19,19 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@android:color/holo_blue_dark"
-            app:items="@{viewmodel.items}"/>
+            app:items="@{viewmodel.items}" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewmodel.showPopWindow}"
+            android:text="popwindowtest" />
+
+        <xu.qiwei.com.todomvvmtest.component.spinner.SpinnerComponent
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            />
     </LinearLayout>
 </layout>
 
