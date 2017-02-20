@@ -18,7 +18,4 @@ public class SpinnerComponent extends LinearLayout {
         binding = SpinnerComponentLayoutBinding.inflate(LayoutInflater.from(context), this, true);
         binding.setViewmodel(new SpinnerComponentViewModel(context));
     }
-
-
-
 }

@@ -71,7 +71,6 @@ public class TaskDetailActivity extends AppCompatActivity implements TaskItemNav
     @Override
     public void showPopWindow(final Button button) {
         final TestPopwindowLayoutBinding binding;
-//
         binding = TestPopwindowLayoutBinding.inflate(LayoutInflater.from(this), null, false);
         binding.spinnerlistListview.setAdapter(new PopWindowListAdapter(new ArrayList<PopWindowListAdapter.Person>(0)));
         binding.setViewmodel(new PersonTestViewModel());

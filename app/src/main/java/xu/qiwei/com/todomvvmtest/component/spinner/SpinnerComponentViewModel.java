@@ -29,7 +29,6 @@ public class SpinnerComponentViewModel {
     public void onSpinnerClicked(View view) {
         LinearLayout mainLayout = (LinearLayout) view;
         findOrCreatePopWindow(mainLayout).showAsDropDown(mainLayout, 0, 0);
-
     }
 
     private PopupWindow findOrCreatePopWindow(LinearLayout linearLayout) {

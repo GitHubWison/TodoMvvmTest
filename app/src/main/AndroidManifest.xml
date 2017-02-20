@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".tasks.TasksActivity" />
         <activity android:name=".details.TaskDetailActivity" />
-        <activity android:name=".addtask.AddTaskActivity"></activity>
+        <activity android:name=".addtask.AddTaskActivity" />
+        <activity android:name=".broadandservice.BroadCastReciverTestActivity"></activity>
     </application>
 
 </manifest>
