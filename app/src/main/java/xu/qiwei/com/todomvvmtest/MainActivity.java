@@ -9,6 +9,7 @@ import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
 import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
 import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
 import xu.qiwei.com.todomvvmtest.tasks.TasksActivity;
+import xu.qiwei.com.todomvvmtest.timesync.TimeSyncActivity;
 
 public class MainActivity extends AppCompatActivity implements TasksNavigator{
     private ActivityMainBinding binding;
@@ -46,5 +47,10 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void toBindingTest() {
         startActivity(new Intent(this, TwoBindTestActivity.class));
+    }
+
+    @Override
+    public void toTimeSync() {
+        startActivity(new Intent(this, TimeSyncActivity.class));
     }
 }

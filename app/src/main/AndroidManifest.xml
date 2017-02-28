@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xu.qiwei.com.todomvvmtest">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +20,14 @@
         <activity android:name=".details.TaskDetailActivity" />
         <activity android:name=".addtask.AddTaskActivity" />
         <activity android:name=".broadandservice.BroadCastReciverTestActivity" />
-        <activity android:name=".databindingtest.TwoBindTestActivity"></activity>
+        <activity android:name=".databindingtest.TwoBindTestActivity" />
+        <activity android:name=".timesync.TimeSyncActivity" />
+
+        <service
+            android:name=".timesync.services.TimeSyncService"
+            />
+        <receiver android:name=".timesync.services.TimeSetReceiver"/>
+        <receiver android:name=".timesync.services.TimeSyncBroadCast"/>
     </application>
 
 </manifest>

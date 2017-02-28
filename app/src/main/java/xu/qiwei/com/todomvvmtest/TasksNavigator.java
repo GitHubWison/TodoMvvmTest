@@ -8,4 +8,6 @@ public interface TasksNavigator {
     void toTaskListActivity();
 
     void toBindingTest();
+
+    void toTimeSync();
 }

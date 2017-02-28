@@ -17,4 +17,7 @@ public class MainActivityViewModel {
     public void toBindingTest(){
         tasksNavigator.toBindingTest();
     }
+    public void toTimeSync(){
+        tasksNavigator.toTimeSync();
+    }
 }

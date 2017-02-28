@@ -36,6 +36,12 @@
             android:text="to binding test"
             android:onClick="@{()->viewmodel.toBindingTest()}"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="to timesync test"
+            android:onClick="@{()->viewmodel.toTimeSync()}"
+            />
     </LinearLayout>
 
 </layout>
