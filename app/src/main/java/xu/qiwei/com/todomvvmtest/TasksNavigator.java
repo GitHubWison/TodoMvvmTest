@@ -6,4 +6,6 @@ package xu.qiwei.com.todomvvmtest;
 
 public interface TasksNavigator {
     void toTaskListActivity();
+
+    void toBindingTest();
 }

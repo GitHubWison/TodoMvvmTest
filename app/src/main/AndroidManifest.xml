@@ -18,7 +18,8 @@
         <activity android:name=".tasks.TasksActivity" />
         <activity android:name=".details.TaskDetailActivity" />
         <activity android:name=".addtask.AddTaskActivity" />
-        <activity android:name=".broadandservice.BroadCastReciverTestActivity"></activity>
+        <activity android:name=".broadandservice.BroadCastReciverTestActivity" />
+        <activity android:name=".databindingtest.TwoBindTestActivity"></activity>
     </application>
 
 </manifest>

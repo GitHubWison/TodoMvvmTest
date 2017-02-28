@@ -14,4 +14,7 @@ public class MainActivityViewModel {
     public void toTaskListActivity(){
         tasksNavigator.toTaskListActivity();
     }
+    public void toBindingTest(){
+        tasksNavigator.toBindingTest();
+    }
 }

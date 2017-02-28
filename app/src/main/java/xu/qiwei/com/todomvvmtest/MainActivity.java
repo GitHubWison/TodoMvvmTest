@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
 import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
+import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
 import xu.qiwei.com.todomvvmtest.tasks.TasksActivity;
 
 public class MainActivity extends AppCompatActivity implements TasksNavigator{
@@ -40,5 +41,10 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void toTaskListActivity() {
         startActivity(new Intent(this, TasksActivity.class));
+    }
+
+    @Override
+    public void toBindingTest() {
+        startActivity(new Intent(this, TwoBindTestActivity.class));
     }
 }
