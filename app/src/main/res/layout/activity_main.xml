@@ -42,6 +42,12 @@
             android:text="to timesync test"
             android:onClick="@{()->viewmodel.toTimeSync()}"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="to thread test"
+            android:onClick="@{()->viewmodel.toThreadTest()}"
+            />
     </LinearLayout>
 
 </layout>

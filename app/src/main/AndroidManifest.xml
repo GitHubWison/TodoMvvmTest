@@ -29,7 +29,8 @@
         <receiver android:name=".timesync.services.TimeSetReceiver" />
         <receiver android:name=".timesync.services.TimeSyncBroadCast" />
 
-        <activity android:name=".componenttest.ComponentActivity"></activity>
+        <activity android:name=".componenttest.ComponentActivity" />
+        <activity android:name=".threadpooltest.ThreadTestActivity"></activity>
     </application>
 
 </manifest>

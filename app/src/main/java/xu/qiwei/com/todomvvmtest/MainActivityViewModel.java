@@ -20,4 +20,7 @@ public class MainActivityViewModel {
     public void toTimeSync(){
         tasksNavigator.toTimeSync();
     }
+    public void toThreadTest(){
+        tasksNavigator.toThreadTest();
+    }
 }

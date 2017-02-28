@@ -10,4 +10,6 @@ public interface TasksNavigator {
     void toBindingTest();
 
     void toTimeSync();
+
+    void toThreadTest();
 }
