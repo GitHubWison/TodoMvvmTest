@@ -30,7 +30,8 @@
         <receiver android:name=".timesync.services.TimeSyncBroadCast" />
 
         <activity android:name=".componenttest.ComponentActivity" />
-        <activity android:name=".threadpooltest.ThreadTestActivity"></activity>
+        <activity android:name=".threadpooltest.ThreadTestActivity" />
+        <activity android:name=".twobindingtest.TwoBindActivity"></activity>
     </application>
 
 </manifest>
