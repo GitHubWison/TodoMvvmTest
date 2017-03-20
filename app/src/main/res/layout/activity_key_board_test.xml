@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_key_board_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoardTestActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="111111"
+        android:id="@+id/test_edittext"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="22222"
+        android:id="@+id/test2_edittext"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <android.inputmethodservice.KeyboardView
+            android:id="@+id/keyboard_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@color/lightblack"
+            android:keyBackground="@drawable/btn_keyboard_key"
+            android:keyTextColor="@android:color/white"
+            android:visibility="visible" />
+    </RelativeLayout>
+</LinearLayout>

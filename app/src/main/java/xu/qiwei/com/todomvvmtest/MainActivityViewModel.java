@@ -23,4 +23,13 @@ public class MainActivityViewModel {
     public void toThreadTest(){
         tasksNavigator.toThreadTest();
     }
+    public void toCustomKeyboard(){
+        tasksNavigator.toCustomKeyboard();
+    }
+    public void toZXing(){
+        tasksNavigator.toZXing();
+    }
+    public void toSignTest(){
+        tasksNavigator.toSignTest();
+    }
 }

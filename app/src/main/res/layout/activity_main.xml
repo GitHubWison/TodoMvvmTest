@@ -48,6 +48,24 @@
             android:text="to thread test"
             android:onClick="@{()->viewmodel.toThreadTest()}"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="to custom keyboard"
+            android:onClick="@{()->viewmodel.toCustomKeyboard()}"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="toZXing"
+            android:onClick="@{()->viewmodel.toZXing()}"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="to SignTest"
+            android:onClick="@{()->viewmodel.toSignTest()}"
+            />
     </LinearLayout>
 
 </layout>

@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
+import xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoardTestActivity;
 import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
 import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
+import xu.qiwei.com.todomvvmtest.signtest.SignTestActivity;
 import xu.qiwei.com.todomvvmtest.tasks.TasksActivity;
 import xu.qiwei.com.todomvvmtest.threadpooltest.ThreadTestActivity;
 import xu.qiwei.com.todomvvmtest.timesync.TimeSyncActivity;
+import xu.qiwei.com.todomvvmtest.zxingtest.ZXingTestActivity;
 
 public class MainActivity extends AppCompatActivity implements TasksNavigator{
     private ActivityMainBinding binding;
@@ -58,6 +61,22 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void toThreadTest() {
         startActivity(new Intent(this, ThreadTestActivity.class));
+    }
+
+    @Override
+    public void toCustomKeyboard() {
+        startActivity(new Intent(this, KeyBoardTestActivity.class));
+    }
+
+    @Override
+    public void toZXing() {
+        startActivity(new Intent(this, ZXingTestActivity.class));
+
+    }
+
+    @Override
+    public void toSignTest() {
+        startActivity(new Intent(this, SignTestActivity.class));
     }
 
 }

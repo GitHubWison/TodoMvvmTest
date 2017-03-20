@@ -12,4 +12,10 @@ public interface TasksNavigator {
     void toTimeSync();
 
     void toThreadTest();
+
+    void toCustomKeyboard();
+
+    void toZXing();
+
+    void toSignTest();
 }
