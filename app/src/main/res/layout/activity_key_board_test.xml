@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="111111"
+        android:inputType="numberDecimal"
         android:id="@+id/test_edittext"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="22222"
+        android:inputType="numberDecimal"
         android:id="@+id/test2_edittext"
 
         />

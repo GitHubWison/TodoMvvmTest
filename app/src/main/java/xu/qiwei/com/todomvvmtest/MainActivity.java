@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
-import xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoardTestActivity;
+import xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoareTestV2Activity;
 import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
 import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
 import xu.qiwei.com.todomvvmtest.fingerprint.FingetTestActivity;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
 
     @Override
     public void toCustomKeyboard() {
-        startActivity(new Intent(this, KeyBoardTestActivity.class));
+        startActivity(new Intent(this, KeyBoareTestV2Activity.class));
     }
 
     @Override

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoardTestV2VM"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/activity_key_boare_test_v2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="111"
+            app:EditTextOnTouch="@{viewModel.onTouchListener}"
+            app:EditTextFocus="@{viewModel.onEditFocus}"
+
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="222"
+            />
+
+    </LinearLayout>
+</layout>
+

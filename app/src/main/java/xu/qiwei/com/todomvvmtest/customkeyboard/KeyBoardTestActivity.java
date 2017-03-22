@@ -24,10 +24,10 @@ public class KeyBoardTestActivity extends AppCompatActivity {
         @Override
         public void onFocusChange(View view, boolean b) {
 
-            if (b) {
+         /*   if (b) {
                 keyBoardUtils.setEditText((EditText) view);
             }
-
+*/
         }
     };
     private  View.OnTouchListener onTouchListener =  new View.OnTouchListener() {
