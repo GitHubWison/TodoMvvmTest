@@ -4,9 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.PERMISSION_GRANTED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".DemoApplication"
         android:allowBackup="true"
@@ -38,7 +41,8 @@
         <activity android:name=".twobindingtest.TwoBindActivity" />
         <activity android:name=".customkeyboard.KeyBoardTestActivity" />
         <activity android:name=".zxingtest.ZXingTestActivity" />
-        <activity android:name=".signtest.SignTestActivity"></activity>
+        <activity android:name=".signtest.SignTestActivity" />
+        <activity android:name=".fingerprint.FingetTestActivity"></activity>
     </application>
 
 </manifest>

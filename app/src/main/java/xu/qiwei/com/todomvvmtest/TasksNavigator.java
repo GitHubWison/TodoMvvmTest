@@ -18,4 +18,6 @@ public interface TasksNavigator {
     void toZXing();
 
     void toSignTest();
+
+    void toFingerTest();
 }

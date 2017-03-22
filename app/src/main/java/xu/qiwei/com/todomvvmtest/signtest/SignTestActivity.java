@@ -14,6 +14,7 @@ import xu.qiwei.com.todomvvmtest.R;
 
 public class SignTestActivity extends AppCompatActivity {
     private Button savesign_button;
+    private Button clearsign_button;
     private SignatureView signatureview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class SignTestActivity extends AppCompatActivity {
     private void initView() {
         savesign_button = (Button)findViewById(R.id.savesign_button);
         signatureview = (SignatureView)findViewById(R.id.signatureview);
+        clearsign_button = (Button)findViewById(R.id.clearsign_button);
     }
 
     private void initEvent() {
@@ -45,6 +47,12 @@ public class SignTestActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(SignTestActivity.this, "您没有签名~", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        clearsign_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signatureview.clear();
             }
         });
     }

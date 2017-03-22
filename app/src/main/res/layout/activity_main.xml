@@ -66,6 +66,12 @@
             android:text="to SignTest"
             android:onClick="@{()->viewmodel.toSignTest()}"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="to fingettest"
+            android:onClick="@{()->viewmodel.toFingerTest()}"
+            />
     </LinearLayout>
 
 </layout>

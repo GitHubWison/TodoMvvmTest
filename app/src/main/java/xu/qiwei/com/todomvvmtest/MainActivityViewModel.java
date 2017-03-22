@@ -32,4 +32,7 @@ public class MainActivityViewModel {
     public void toSignTest(){
         tasksNavigator.toSignTest();
     }
+    public void toFingerTest(){
+        tasksNavigator.toFingerTest();
+    }
 }
