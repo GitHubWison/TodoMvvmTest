@@ -44,6 +44,8 @@
         <activity android:name=".signtest.SignTestActivity" />
         <activity android:name=".fingerprint.FingetTestActivity" />
         <activity android:name=".customkeyboard.KeyBoareTestV2Activity"></activity>
+        <activity android:name=".zxingtest.CaptureCusActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

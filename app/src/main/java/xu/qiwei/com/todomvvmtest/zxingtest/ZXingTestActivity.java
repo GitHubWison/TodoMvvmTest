@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import xu.qiwei.com.todomvvmtest.PermissionAdapter;
@@ -32,7 +31,7 @@ private Button zxing_button;
                 PermissionAdapter.getInstance().camera(ZXingTestActivity.this, new PermissionVerifyCallBack() {
                     @Override
                     public void onGet() {
-                        Intent intent = new Intent(ZXingTestActivity.this, CaptureActivity.class);
+                        Intent intent = new Intent(ZXingTestActivity.this, CaptureCusActivity.class);
                         startActivityForResult(intent, REQUEST_CODE);
                     }
 

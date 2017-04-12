@@ -20,7 +20,8 @@
 		<Key android:codes="57" android:keyLabel="9" />
 	</Row>
 	<Row>
-		<Key android:codes="46" android:keyLabel="." />
+		<Key android:codes="46" android:keyLabel="."
+			/>
 		<Key android:codes="48" android:keyLabel="0" />
 		<Key android:codes="-5"
 			android:keyEdgeFlags="right" android:isRepeatable="true"
