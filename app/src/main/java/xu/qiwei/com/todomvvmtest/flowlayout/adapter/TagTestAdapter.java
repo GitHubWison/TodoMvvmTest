@@ -37,4 +37,9 @@ public class TagTestAdapter extends TagAdapter<String> {
         radioButton.setText(s);
         return view;
     }
+
+    public void replaceData(List<String> items) {
+        datas = items;
+        notifyDataChanged();
+    }
 }

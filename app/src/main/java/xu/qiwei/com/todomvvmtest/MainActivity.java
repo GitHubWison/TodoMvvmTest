@@ -10,7 +10,7 @@ import xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoareTestV2Activity;
 import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
 import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
 import xu.qiwei.com.todomvvmtest.fingerprint.FingetTestActivity;
-import xu.qiwei.com.todomvvmtest.flowlayout.FlowLayoutTestActivity;
+import xu.qiwei.com.todomvvmtest.flowlayout.view.FlowLayoutTestActivity;
 import xu.qiwei.com.todomvvmtest.signtest.SignTestActivity;
 import xu.qiwei.com.todomvvmtest.tasks.TasksActivity;
 import xu.qiwei.com.todomvvmtest.threadpooltest.ThreadTestActivity;

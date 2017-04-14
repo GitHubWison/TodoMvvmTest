@@ -47,7 +47,7 @@
         <activity
             android:name=".zxingtest.CaptureCusActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".flowlayout.FlowLayoutTestActivity"></activity>
+        <activity android:name=".flowlayout.view.FlowLayoutTestActivity"></activity>
     </application>
 
 </manifest>
