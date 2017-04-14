@@ -43,9 +43,11 @@
         <activity android:name=".zxingtest.ZXingTestActivity" />
         <activity android:name=".signtest.SignTestActivity" />
         <activity android:name=".fingerprint.FingetTestActivity" />
-        <activity android:name=".customkeyboard.KeyBoareTestV2Activity"></activity>
-        <activity android:name=".zxingtest.CaptureCusActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".customkeyboard.KeyBoareTestV2Activity" />
+        <activity
+            android:name=".zxingtest.CaptureCusActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".flowlayout.FlowLayoutTestActivity"></activity>
     </application>
 
 </manifest>

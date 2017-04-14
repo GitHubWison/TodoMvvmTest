@@ -35,4 +35,7 @@ public class MainActivityViewModel {
     public void toFingerTest(){
         tasksNavigator.toFingerTest();
     }
+    public void toFlowLayoutTest(){
+        tasksNavigator.toFlowLayoutTest();
+    }
 }

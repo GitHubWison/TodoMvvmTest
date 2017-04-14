@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="lightblack">#ff202020</color>
+    <color name="component_linecolor">#a0a0a0</color>
 </resources>

@@ -20,4 +20,6 @@ public interface TasksNavigator {
     void toSignTest();
 
     void toFingerTest();
+
+    void toFlowLayoutTest();
 }
