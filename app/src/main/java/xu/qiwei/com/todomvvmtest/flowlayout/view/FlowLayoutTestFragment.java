@@ -15,6 +15,7 @@ import xu.qiwei.com.todomvvmtest.flowlayout.viewmodel.FlowLayoutTestViewModel;
  */
 public class FlowLayoutTestFragment extends Fragment {
     private FlowLayoutTestViewModel viewModel;
+    private   FragmentFlowLayoutTestBinding binding;
     public static FlowLayoutTestFragment newInstance() {
         
         Bundle args = new Bundle();
@@ -34,11 +35,12 @@ public class FlowLayoutTestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        FragmentFlowLayoutTestBinding binding = FragmentFlowLayoutTestBinding.inflate(inflater,container,false);
+         binding = FragmentFlowLayoutTestBinding.inflate(inflater,container,false);
         binding.setViewmodel(viewModel);
 
         return binding.getRoot();
     }
+
 
     public void setViewModel(FlowLayoutTestViewModel viewModel) {
         this.viewModel = viewModel;

@@ -1,25 +1,30 @@
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="viewmodel"
-            type="xu.qiwei.com.todomvvmtest.flowlayout.viewmodel.FlowLayoutTestViewModel"/>
+            type="xu.qiwei.com.todomvvmtest.flowlayout.viewmodel.FlowLayoutTestViewModel" />
     </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="213423"
-            />
+            android:text="213423" />
+
         <xu.qiwei.com.todomvvmtest.com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/test_tagflowlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:FlowlayoutListener="@{viewmodel}"
             app:flowitems="@{viewmodel.items}"
-            />
+            app:max_select="1" />
 
     </LinearLayout>
 </layout>

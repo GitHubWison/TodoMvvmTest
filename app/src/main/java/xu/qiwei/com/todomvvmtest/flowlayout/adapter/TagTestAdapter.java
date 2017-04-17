@@ -10,7 +10,6 @@ import java.util.List;
 import xu.qiwei.com.todomvvmtest.R;
 import xu.qiwei.com.todomvvmtest.com.zhy.view.flowlayout.FlowLayout;
 import xu.qiwei.com.todomvvmtest.com.zhy.view.flowlayout.TagAdapter;
-import xu.qiwei.com.todomvvmtest.com.zhy.view.flowlayout.TagFlowLayout;
 
 
 /**
@@ -20,26 +19,22 @@ import xu.qiwei.com.todomvvmtest.com.zhy.view.flowlayout.TagFlowLayout;
 public class TagTestAdapter extends TagAdapter<String> {
     private List<String> datas;
     private Context context;
-    private TagFlowLayout tagFlowLayout;
-    public TagTestAdapter(List<String> datas, Context context, TagFlowLayout tagFlowLayout) {
+
+    public TagTestAdapter(List<String> datas, Context context) {
         super(datas);
         this.datas = datas;
         this.context = context;
-        this.tagFlowLayout=tagFlowLayout;
+
     }
 
     @Override
     public View getView(FlowLayout parent, int position, String s) {
          LayoutInflater mInflater = LayoutInflater.from(context);
        View view =  mInflater.inflate(R.layout.flowlayouttest_layout,
-               tagFlowLayout, false);
+               parent, false);
         TextView radioButton = (TextView)view.findViewById(R.id.main_radiobutton);
-        radioButton.setText(s);
+        radioButton.setText(datas.get(position));
         return view;
     }
 
-    public void replaceData(List<String> items) {
-        datas = items;
-        notifyDataChanged();
-    }
 }

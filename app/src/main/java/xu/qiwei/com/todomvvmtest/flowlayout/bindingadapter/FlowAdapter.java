@@ -14,9 +14,11 @@ import xu.qiwei.com.todomvvmtest.flowlayout.adapter.TagTestAdapter;
 public class FlowAdapter {
     @BindingAdapter(requireAll = false,value = {"flowitems"})
     public static void setFlowItems(TagFlowLayout flowLayout, List<String> items){
-        TagTestAdapter adapter = (TagTestAdapter)flowLayout.getAdapter();
-        if (adapter!=null) {
-            adapter.replaceData(items);
-        }
+        TagTestAdapter adapter = new TagTestAdapter(items,flowLayout.getContext());
+        flowLayout.setAdapter(adapter);
+    }
+    @BindingAdapter(requireAll = false,value = {"FlowlayoutListener"})
+    public static void setFlowlayoutListener(TagFlowLayout flowLayout, TagFlowLayout.OnTagClickListener onTagClickListener){
+        flowLayout.setOnTagClickListener(onTagClickListener);
     }
 }

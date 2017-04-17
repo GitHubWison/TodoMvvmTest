@@ -3,6 +3,7 @@ package xu.qiwei.com.todomvvmtest.flowlayout.view;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import xu.qiwei.com.todomvvmtest.ViewHolder;
 import xu.qiwei.com.todomvvmtest.com.zhy.view.flowlayout.TagFlowLayout;
 import xu.qiwei.com.todomvvmtest.flowlayout.viewmodel.FlowLayoutTestViewModel;
 
-public class FlowLayoutTestActivity extends AppCompatActivity {
+public class FlowLayoutTestActivity extends AppCompatActivity implements FlowLayoutView{
     private TagFlowLayout mflowlayout;
     private List<String> datas;
     private static final String FLOWLAYOUTTESTVIEWMODEL = "FlowLayoutTestViewModel";
@@ -37,12 +38,17 @@ public class FlowLayoutTestActivity extends AppCompatActivity {
         if (viewModelViewHolder!=null&&viewModelViewHolder.getViewModel()!=null) {
             return viewModelViewHolder.getViewModel();
         }else {
-            FlowLayoutTestViewModel flowLayoutTestViewModel = new FlowLayoutTestViewModel();
+            FlowLayoutTestViewModel flowLayoutTestViewModel = new FlowLayoutTestViewModel(this);
             ActivityUtils.addFragmentToActivity(fragmentManager,
                     ViewHolder.createViewModelContiner(flowLayoutTestViewModel)
             ,FLOWLAYOUTTESTVIEWMODEL);
             return flowLayoutTestViewModel;
         }
+    }
+
+    @Override
+    public void toastMsg(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
 

@@ -115,7 +115,8 @@ public class TagFlowLayout extends FlowLayout implements TagAdapter.OnDataChange
         TagAdapter adapter = mTagAdapter;
         TagView tagViewContainer = null;
         HashSet preCheckedList = mTagAdapter.getPreCheckedList();
-        for (int i = 0; i < adapter.getCount(); i++)
+        int adaptercount   = adapter.getCount();
+        for (int i = 0; i < adaptercount; i++)
         {
             View tagView = adapter.getView(this, i, adapter.getItem(i));
 
@@ -183,7 +184,7 @@ public class TagFlowLayout extends FlowLayout implements TagAdapter.OnDataChange
         TagView child = findChild(x, y);
         int pos = findPosByView(child);
         if (mSelectedMax==1) {
-            if (child.isChecked()) {
+            if (child==null||child.isChecked()) {
                 return super.performClick();
             }
         }
