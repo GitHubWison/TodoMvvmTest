@@ -38,4 +38,8 @@ public class MainActivityViewModel {
     public void toFlowLayoutTest(){
         tasksNavigator.toFlowLayoutTest();
     }
+    public void showDialog(){
+        tasksNavigator.showDialog();
+    }
+
 }

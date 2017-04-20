@@ -11,6 +11,7 @@ import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
 import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
 import xu.qiwei.com.todomvvmtest.fingerprint.FingetTestActivity;
 import xu.qiwei.com.todomvvmtest.flowlayout.view.FlowLayoutTestActivity;
+import xu.qiwei.com.todomvvmtest.fragmentdialogtest.views.TestFragmentDialog;
 import xu.qiwei.com.todomvvmtest.signtest.SignTestActivity;
 import xu.qiwei.com.todomvvmtest.tasks.TasksActivity;
 import xu.qiwei.com.todomvvmtest.threadpooltest.ThreadTestActivity;
@@ -89,6 +90,11 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void toFlowLayoutTest() {
         startActivity(new Intent(this, FlowLayoutTestActivity.class));
+    }
+
+    @Override
+    public void showDialog() {
+        new TestFragmentDialog(this).show(getSupportFragmentManager(),"");
     }
 
 }

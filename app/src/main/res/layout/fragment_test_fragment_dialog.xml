@@ -1,0 +1,24 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="xu.qiwei.com.todomvvmtest.fragmentdialogtest.viewmodel.TestDialogViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:onClick="@{viewmodel::testClick}"
+            android:text="@string/hello_blank_fragment" />
+
+
+    </LinearLayout>
+</layout>
+
