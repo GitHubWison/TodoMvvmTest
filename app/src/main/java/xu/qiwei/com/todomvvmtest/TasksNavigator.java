@@ -24,4 +24,6 @@ public interface TasksNavigator {
     void toFlowLayoutTest();
 
     void showDialog();
+
+    void showToast(String maintest);
 }

@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center"
-            android:onClick="@{viewmodel::testClick}"
+            android:onClick="@{()->viewmodel.testClick()}"
             android:text="@string/hello_blank_fragment" />
 
 
