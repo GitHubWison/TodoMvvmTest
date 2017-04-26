@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
+import xu.qiwei.com.todomvvmtest.blueprint.views.PrintMainActivity;
 import xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoareTestV2Activity;
 import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
 import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
@@ -125,6 +126,11 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void showToast(String maintest) {
         Toast.makeText(this, maintest+"", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void toPrintActivity() {
+        startActivity(new Intent(this, PrintMainActivity.class));
     }
 
 

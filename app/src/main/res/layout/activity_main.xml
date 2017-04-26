@@ -83,6 +83,12 @@
             android:text="show fragmentdialog"
             android:onClick="@{()->viewmodel.showDialog()}"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="blueprint..."
+            android:onClick="@{()->viewmodel.toPrintActivity()}"
+            />
     </LinearLayout>
 
 </layout>

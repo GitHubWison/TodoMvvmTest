@@ -41,5 +41,8 @@ public class MainActivityViewModel {
     public void showDialog(){
         tasksNavigator.showDialog();
     }
+    public void toPrintActivity(){
+        tasksNavigator.toPrintActivity();
+    }
 
 }

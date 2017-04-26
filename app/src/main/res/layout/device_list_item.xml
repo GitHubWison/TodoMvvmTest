@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="xu.qiwei.com.todomvvmtest.blueprint.listadapter.viewmodels.DiviceAdapterViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:onClick="@{viewmodel::onAdapterItemClick}"
+        >
+        <!--蓝牙名称-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.bluetoothname}"
+            />
+        <!--蓝牙地址-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.bluetoothaddr}"
+            />
+        <!--蓝牙是否绑定-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.bluetoothbinded}"
+            />
+    </LinearLayout>
+</layout>
+

@@ -26,4 +26,6 @@ public interface TasksNavigator {
     void showDialog();
 
     void showToast(String maintest);
+
+    void toPrintActivity();
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="xu.qiwei.com.todomvvmtest.blueprint.viewmodel.PrintMainViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@{viewmodel.buttext}"
+            android:onClick="@{viewmodel::searchBluePrinter}"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:text="打印"
+            android:onClick="@{viewmodel::printMsg}"
+            android:layout_height="100dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:onClick="@{viewmodel::connectPrinter}"
+            android:text="连接蓝牙设备"
+            />
+
+
+    </LinearLayout>
+</layout>
+
