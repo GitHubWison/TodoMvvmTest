@@ -24,11 +24,6 @@ public class PrintMainActivity extends AppCompatActivity implements PrintMainVie
 
     }
 
-/*    private void initComponents() {
-         printDialog = BluePrintDiviceListDialog.newInstance();
-        BluePrintDiveceListViewModel bluePrintDiveceListViewModel = findOrCreateBluePrintDiveceListVM();
-        printDialog.setViewModel(bluePrintDiveceListViewModel);
-    }*/
 
     @SuppressWarnings("unchecked")
     private BluePrintDiveceListViewModel findOrCreateBluePrintDiveceListVM() {

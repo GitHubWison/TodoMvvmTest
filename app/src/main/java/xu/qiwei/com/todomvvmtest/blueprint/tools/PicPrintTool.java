@@ -1,10 +1,12 @@
 package xu.qiwei.com.todomvvmtest.blueprint.tools;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.util.Log;
 
 /**
  * Created by xuqiwei on 17-4-26.
@@ -27,7 +29,7 @@ public class PicPrintTool {
             int green = (pixel & 0x0000ff00) >> 8; // 取中两位
             int blue = pixel & 0x000000ff; // 取低两位
             int gray = RGB2Gray(red, green, blue);
-            if (gray < 128) {
+            if (gray < 168) {
                 b = 1;
             } else {
                 b = 0;
@@ -63,7 +65,7 @@ public class PicPrintTool {
         //整除24时的情况。比如bitmap 分辨率为 240 * 250，占用 7500 byte，
         //但是实际上要存储11行数据，每一行需要 24 * 240 / 8 =720byte 的空间。再加上一些指令存储的开销，
         //所以多申请 1000byte 的空间是稳妥的，不然运行时会抛出数组访问越界的异常。
-        int size = bmp.getWidth() * bmp.getHeight() / 8 + 1000;
+        int size = bmp.getWidth() * bmp.getHeight() / 8 + 5000;
         byte[] data = new byte[size];
         int k = 0;
         //设置行距为0的指令
@@ -97,16 +99,16 @@ public class PicPrintTool {
 
     /**
      * 对图片进行压缩（去除透明度）
-     *
-     * @param bitmapOrg
      */
     public static Bitmap compressPic(Bitmap bitmap) {
         // 获取这个图片的宽和高
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         // TODO:指定调整后的宽度和高度
-        int newWidth = 240;
-        int newHeight = 240;
+//        int newWidth = 600*width/height ;
+//        int newHeight = 600;
+        int newWidth = 600;
+        int newHeight = 600*height/width;
         Bitmap targetBmp = Bitmap.createBitmap(newWidth, newHeight, Bitmap.Config.ARGB_8888);
         Canvas targetCanvas = new Canvas(targetBmp);
         targetCanvas.drawColor(0xffffffff);
@@ -152,5 +154,93 @@ public class PicPrintTool {
 
         return canvasBitmap;
     }
+    /**
+     *  压缩处理图片
+     */
+    public static Bitmap zoomImg(Bitmap bm, int newWidth ,int newHeight){
+        // 获得图片的宽高
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        // 计算缩放比例
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // 取得想要缩放的matrix参数
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        // 得到新的图片
+        Bitmap newbm = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, true);
+        return newbm;
+    }
+    public static Bitmap zoomImg(Bitmap bm, int newWidth ){
+        // 获得图片的宽高
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        int newHeight = 600*height/width;
+        // 计算缩放比例
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // 取得想要缩放的matrix参数
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        // 得到新的图片
+        Bitmap newbm = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, true);
+        return newbm;
+    }
 
+
+    // 根据路径获得图片并压缩，返回bitmap用于显示
+    public static Bitmap getSmallBitmap(String filePath) {
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(filePath, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, 600);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+
+        return BitmapFactory.decodeFile(filePath, options);
+    }
+    public static Bitmap zoomv2(Bitmap bitmap,int width){
+        Matrix matrix=new Matrix();
+        int originalHeight = bitmap.getHeight();
+        int originalWidth = bitmap.getWidth();
+       float scale = (float)width/(float)originalWidth;
+        matrix.postScale(scale, scale);
+        Bitmap temp = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);
+        return temp;
+    }
+
+    //计算图片的缩放值
+    public static int calculateInSampleSize(BitmapFactory.Options options,int reqWidth, int reqHeight) {
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            final int heightRatio = Math.round((float) height/ (float) reqHeight);
+            final int widthRatio = Math.round((float) width / (float) reqWidth);
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+        return inSampleSize;
+    }
+    //计算图片的缩放值
+    public static int calculateInSampleSize(BitmapFactory.Options options,int reqWidth) {
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        final  int reqHeight = reqWidth*height/width;
+        int inSampleSize = 1;
+        Log.e("width",width+"");
+        Log.e("height",height+"");
+        Log.e("finalwidth",reqWidth+"");
+        Log.e("finalheight",reqHeight+"");
+
+        if (height > reqHeight || width > reqWidth) {
+            final int heightRatio = Math.round((float) height/ (float) reqHeight);
+            final int widthRatio = Math.round((float) width / (float) reqWidth);
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+        return inSampleSize;
+    }
 }

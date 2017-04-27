@@ -6,20 +6,23 @@ import android.bluetooth.BluetoothSocket;
 import android.databinding.ObservableField;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+import com.google.common.cache.LoadingCache;
+
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 
+import xu.qiwei.com.todomvvmtest.DemoApplication;
 import xu.qiwei.com.todomvvmtest.blueprint.tools.PicPrintTool;
 import xu.qiwei.com.todomvvmtest.blueprint.views.PrintMainView;
+import xu.qiwei.com.todomvvmtest.utils.SharedPrefsUtils;
 
 /**
  * Created by xuqiwei on 17-4-26.
@@ -28,25 +31,25 @@ import xu.qiwei.com.todomvvmtest.blueprint.views.PrintMainView;
 public class PrintMainViewModel {
     private PrintMainView printMainView;
     private OutputStream outputStream;
-
-    final byte[][] byteCommands = { { 0x1b, 0x40 },// 复位打印机
-            { 0x1b, 0x4d, 0x00 },// 标准ASCII字体
-            { 0x1b, 0x4d, 0x01 },// 压缩ASCII字体
-            { 0x1d, 0x21, 0x00 },// 字体不放大
-            { 0x1d, 0x21, 0x11 },// 宽高加倍
-            { 0x1b, 0x45, 0x00 },// 取消加粗模式
-            { 0x1b, 0x45, 0x01 },// 选择加粗模式
-            { 0x1b, 0x7b, 0x00 },// 取消倒置打印
-            { 0x1b, 0x7b, 0x01 },// 选择倒置打印
-            { 0x1d, 0x42, 0x00 },// 取消黑白反显
-            { 0x1d, 0x42, 0x01 },// 选择黑白反显
-            { 0x1b, 0x56, 0x00 },// 取消顺时针旋转90°
-            { 0x1b, 0x56, 0x01 },// 选择顺时针旋转90°
-    };
+    private static final String BLUETOOTHADDRESSNAME = "blueToothAddressname";
+    private LoadingCache<String, String> cachebuilder;
     public final ObservableField<String> buttext = new ObservableField<>("搜索蓝牙设备");
+    public final ObservableField<Drawable> beforezoom = new ObservableField<>();
+public final ObservableField<Drawable> afterzoom = new ObservableField<>();
+    public final ObservableField<Drawable> afterzoom2 = new ObservableField<>();
 
-    public PrintMainViewModel(PrintMainView printMainView) {
+    public PrintMainViewModel(PrintMainView printMainView)  {
         this.printMainView = printMainView;
+        try {
+            initData();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initData() throws ExecutionException {
+        String name = SharedPrefsUtils.getStringPreference(DemoApplication.getContext(),BLUETOOTHADDRESSNAME);
+        buttext.set(name);
     }
 
     //    查找蓝牙设备
@@ -58,7 +61,7 @@ public class PrintMainViewModel {
     private Bitmap getBitmapPic(){
         String picPath = new StringBuffer().append(Environment.getExternalStorageDirectory().getPath())
                 .append(File.separator)
-                .append("testecg.png").toString();
+                .append("testecg3.png").toString();
 //        读取图片
         File mFile=new File(picPath);
         //若该文件存在
@@ -70,45 +73,39 @@ public class PrintMainViewModel {
             return null;
         }
     }
-/*    public static byte[] Bitmap2Bytes(Bitmap bm){
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        return baos.toByteArray();
-    }*/
     public void printMsg(View view) {
 //        打印
+/*        String picPath = new StringBuffer().append(Environment.getExternalStorageDirectory().getPath())
+                .append(File.separator)
+                .append("testecg3.png").toString();*/
+//       Bitmap bitmap = PicPrintTool.compressPic(getBitmapPic());
+/*        Bitmap convertBitmap =  PicPrintTool.zoomImg(PicPrintTool.adjustPhotoRotation(bitmap,90),600) ;
+        beforezoom.set(new BitmapDrawable(DemoApplication.getContext().getResources(),bitmap));
 
-       Bitmap bitmap = PicPrintTool.compressPic(getBitmapPic());
-        Bitmap convertBitmap = PicPrintTool.adjustPhotoRotation(bitmap,90);
-        byte[] data = PicPrintTool.draw2PxPoint(convertBitmap);
+        afterzoom.set(new BitmapDrawable(DemoApplication.getContext().getResources(),convertBitmap))*/;
+        Bitmap allBitMap = PicPrintTool.adjustPhotoRotation(getBitmapPic(),90);
+        int allBitMapWidth = allBitMap.getWidth();
+        int allBitMapHeight = allBitMap.getHeight();
+        Bitmap cutbitmap =  Bitmap.createBitmap(allBitMap,0,0,allBitMapWidth,allBitMapHeight/4);
+
+/*                beforezoom.set(new BitmapDrawable(DemoApplication.getContext().getResources(),allBitMap));
+        afterzoom.set(new BitmapDrawable(DemoApplication.getContext().getResources(), PicPrintTool.compressPic(getBitmapPic())));
+        Bitmap zoom2bitmap = PicPrintTool.getSmallBitmap(picPath);
+        Log.e("zoom2bitmapwidth",zoom2bitmap.getWidth()+"");
+        Log.e("zoom2bitmapheight",zoom2bitmap.getHeight()+"");
+        afterzoom2.set(new BitmapDrawable(DemoApplication.getContext().getResources(), cutbitmap));*/
+//        Bitmap convertBitmap =PicPrintTool.adjustPhotoRotation(PicPrintTool.adjustPhotoRotation( PicPrintTool.adjustPhotoRotation(bitmap,90),90),90)  ;
+
+
+//        beforezoom.set(new BitmapDrawable(DemoApplication.getContext().getResources(),allBitMap));
+//        afterzoom2.set(new BitmapDrawable(DemoApplication.getContext().getResources(), allBitMap));
+        byte[] data = PicPrintTool.draw2PxPoint(PicPrintTool.zoomImg(allBitMap,560));
         try {
             outputStream.write(data, 0, data.length);
             outputStream.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-    }
-    private static InputStream Bitmap2IS(Bitmap bm){
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        InputStream sbs = new ByteArrayInputStream(baos.toByteArray());
-        return sbs;
-    }
-    private byte[] getBytes(InputStream is) throws IOException {
-
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        byte[] b = new byte[1024];
-        int len = 0;
-
-        while ((len = is.read(b, 0, 1024)) != -1)
-        {
-            baos.write(b, 0, len);
-            baos.flush();
-        }
-        byte[] bytes = baos.toByteArray();
-        return bytes;
     }
 
 
@@ -138,5 +135,6 @@ public class PrintMainViewModel {
 
     public void setAddress(String diviceAddress) {
         buttext.set(diviceAddress);
+        SharedPrefsUtils.setStringPreference(DemoApplication.getContext(),BLUETOOTHADDRESSNAME,diviceAddress);
     }
 }

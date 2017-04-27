@@ -6,30 +6,51 @@
             name="viewmodel"
             type="xu.qiwei.com.todomvvmtest.blueprint.viewmodel.PrintMainViewModel"/>
     </data>
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        <Button
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="@{viewmodel.buttext}"
-            android:onClick="@{viewmodel::searchBluePrinter}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:text="打印"
-            android:onClick="@{viewmodel::printMsg}"
-            android:layout_height="100dp" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:onClick="@{viewmodel::connectPrinter}"
-            android:text="连接蓝牙设备"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="@{viewmodel.buttext}"
+                android:onClick="@{viewmodel::searchBluePrinter}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:text="打印"
+                android:onClick="@{viewmodel::printMsg}"
+                android:layout_height="100dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:onClick="@{viewmodel::connectPrinter}"
+                android:text="连接蓝牙设备"
+                />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{viewmodel.beforezoom}"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{viewmodel.afterzoom2}"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{viewmodel.afterzoom}"
+                />
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
 </layout>
 
