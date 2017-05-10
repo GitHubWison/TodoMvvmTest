@@ -23,7 +23,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:text="打印"
-                android:onClick="@{viewmodel::printMsg}"
+                android:onClick="@{()->viewmodel.printTxtMsg()}"
                 android:layout_height="100dp" />
             <Button
                 android:layout_width="match_parent"
