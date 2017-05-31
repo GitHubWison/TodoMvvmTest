@@ -7,88 +7,117 @@
             name="viewmodel"
             type="xu.qiwei.com.todomvvmtest.MainActivityViewModel"/>
     </data>
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:orientation="vertical"
-        tools:context="xu.qiwei.com.todomvvmtest.MainActivity">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            tools:context="xu.qiwei.com.todomvvmtest.MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/hello_textview"
-            android:text="Hello World!" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to task listactivity"
-            android:onClick="@{() -> viewmodel.toTaskListActivity()}"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hello_textview"
+                android:text="Hello World!" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="to task listactivity"
+                android:onClick="@{() -> viewmodel.toTaskListActivity()}"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
 
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to binding test"
-            android:onClick="@{()->viewmodel.toBindingTest()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to timesync test"
-            android:onClick="@{()->viewmodel.toTimeSync()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to thread test"
-            android:onClick="@{()->viewmodel.toThreadTest()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to custom keyboard"
-            android:onClick="@{()->viewmodel.toCustomKeyboard()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="toZXing"
-            android:onClick="@{()->viewmodel.toZXing()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to SignTest"
-            android:onClick="@{()->viewmodel.toSignTest()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to fingettest"
-            android:onClick="@{()->viewmodel.toFingerTest()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->viewmodel.toFlowLayoutTest()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="show fragmentdialog"
-            android:onClick="@{()->viewmodel.showDialog()}"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="blueprint..."
-            android:onClick="@{()->viewmodel.toPrintActivity()}"
-            />
-    </LinearLayout>
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="to binding test"
+                android:onClick="@{()->viewmodel.toBindingTest()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="to timesync test"
+                android:onClick="@{()->viewmodel.toTimeSync()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="to thread test"
+                android:onClick="@{()->viewmodel.toThreadTest()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="to custom keyboard"
+                android:onClick="@{()->viewmodel.toCustomKeyboard()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="toZXing"
+                android:onClick="@{()->viewmodel.toZXing()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="to SignTest"
+                android:onClick="@{()->viewmodel.toSignTest()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="to fingettest"
+                android:onClick="@{()->viewmodel.toFingerTest()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->viewmodel.toFlowLayoutTest()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="show fragmentdialog"
+                android:onClick="@{()->viewmodel.showDialog()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="blueprint..."
+                android:onClick="@{()->viewmodel.toPrintActivity()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="屏幕适配"
+                android:onClick="@{()->viewmodel.toAutoLayoutActivity()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="蓝牙打印v2"
+                android:onClick="@{()->viewmodel.toBluePrintV2Activity()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载ａｃｔｉｖｉｔｙ"
+                android:onClick="@{()->viewmodel.toLoadActivity()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="toShowTest"
+                android:onClick="@{()->viewmodel.toShowTest()}"
+                />
+        </LinearLayout>
+    </ScrollView>
+
 
 </layout>

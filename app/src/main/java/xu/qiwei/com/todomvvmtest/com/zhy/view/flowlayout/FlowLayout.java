@@ -6,6 +6,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zhy.autolayout.AutoLayoutInfo;
+import com.zhy.autolayout.utils.AutoLayoutHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +16,7 @@ import xu.qiwei.com.todomvvmtest.R;
 
 public class FlowLayout extends ViewGroup
 {
+    private AutoLayoutHelper mHelper = new AutoLayoutHelper(this);
     private static final String TAG = "FlowLayout";
     private static final int LEFT = -1;
     private static final int CENTER = 0;
@@ -45,6 +49,8 @@ public class FlowLayout extends ViewGroup
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
+        if (!isInEditMode())
+            mHelper.adjustChildren();
         int sizeWidth = MeasureSpec.getSize(widthMeasureSpec);
         int modeWidth = MeasureSpec.getMode(widthMeasureSpec);
         int sizeHeight = MeasureSpec.getSize(heightMeasureSpec);
@@ -206,18 +212,50 @@ public class FlowLayout extends ViewGroup
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs)
     {
-        return new MarginLayoutParams(getContext(), attrs);
+        return  new LayoutParams(getContext(), attrs);
     }
 
-    @Override
-    protected LayoutParams generateDefaultLayoutParams()
+  /*  @Override
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams()
     {
         return new MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    }
+    }*/
 
-    @Override
-    protected LayoutParams generateLayoutParams(LayoutParams p)
+
+
+
+    public static class LayoutParams extends MarginLayoutParams
+            implements AutoLayoutHelper.AutoLayoutParams
     {
-        return new MarginLayoutParams(p);
+        private AutoLayoutInfo mAutoLayoutInfo;
+
+        public LayoutParams(Context c, AttributeSet attrs)
+        {
+            super(c, attrs);
+            mAutoLayoutInfo = AutoLayoutHelper.getAutoLayoutInfo(c, attrs);
+        }
+
+        @Override
+        public AutoLayoutInfo getAutoLayoutInfo()
+        {
+            return mAutoLayoutInfo;
+        }
+
+
+        public LayoutParams(int width, int height)
+        {
+            super(width, height);
+        }
+
+        public LayoutParams(ViewGroup.LayoutParams source)
+        {
+            super(source);
+        }
+
+        public LayoutParams(MarginLayoutParams source)
+        {
+            super(source);
+        }
+
     }
 }

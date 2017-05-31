@@ -44,5 +44,17 @@ public class MainActivityViewModel {
     public void toPrintActivity(){
         tasksNavigator.toPrintActivity();
     }
+    public void toAutoLayoutActivity(){
+        tasksNavigator.toAutoLayoutActivity();
+    }
+    public void toBluePrintV2Activity(){
+        tasksNavigator.toBluePrintV2Activity();
+    }
+    public void toLoadActivity(){
+        tasksNavigator.toLoadActivity();
+    }
+    public void toShowTest(){
+        tasksNavigator.toShowTest();
+    }
 
 }

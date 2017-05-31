@@ -5,4 +5,13 @@
     <color name="colorAccent">#FF4081</color>
     <color name="lightblack">#ff202020</color>
     <color name="component_linecolor">#a0a0a0</color>
+
+    <color name="btn_bg">#ff6600</color>
+    <color name="btn_bg_pre">#c8580d</color>
+    <color name="edittext_bg">#d7d7d7</color>
+    <color name="line">#c9c9c9</color>
+    <color name="textcolor">#c3c3c3</color>
+    <color name="deep_gray">#666666</color>
+    <color name="textredcolor">#f31216</color>
+    <color name="activitybg">#f3f3f3</color>
 </resources>

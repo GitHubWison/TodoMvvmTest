@@ -3,4 +3,57 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="medicalrecord_left_homepage_title">首页</string>
+    <string name="medicalrecord_left_homepage_tag">0</string>
+    <string name="medicalrecord_left_patientbaseinfo_title">患者信息</string>
+    <string name="medicalrecord_left_patientbaseinfo_tag">1</string>
+
+    <string name="medicalrecord_left_patienthistory_title">患者病史</string>
+    <string name="medicalrecord_left_patienthistory_tag">2</string>
+
+    <string name="medicalrecord_left_phyexam_title">体格检查</string>
+    <string name="medicalrecord_left_phyexam_tag">3</string>
+
+    <string name="medicalrecord_left_phyexam_final_title">生命体征\n(交接时)</string>
+    <string name="medicalrecord_left_home_phyexam_final_title">生命体征(交接时)</string>
+    <string name="medicalrecord_left_phyexam_final_tag">4</string>
+
+    <string name="medicalrecord_left_specialassess_title">专科评估</string>
+    <string name="medicalrecord_left_specialassess_tag">5</string>
+
+    <string name="medicalrecord_left_digandtreat_title">诊断与处理</string>
+    <string name="medicalrecord_left_digandtreat_tag">6</string>
+
+    <string name="medicalrecord_left_treatresult_title">救治结果</string>
+    <string name="medicalrecord_left_treatresult_tag">7</string>
+
+    <string name="medicalrecord_left_handoverrecord_title">交接记录</string>
+
+    <string name="medicalrecord_left_handoverrecord_tag">8</string>
+
+    <string name="medicalrecord_left_emergencyresources_title">急救资源</string>
+
+    <string name="medicalrecord_left_emergencyresources_tag">12</string>
+
+    <string name="medicalrecord_gcs_title">格拉斯哥评分</string>
+
+    <string name="medicalrecord_left_referrallist_title">患者转诊</string>
+
+    <string name="medicalrecord_carstatus_title01">准备出车</string>
+    <string name="medicalrecord_carstatus_title02">赶往现场</string>
+    <string name="medicalrecord_carstatus_title03">到达现场</string>
+    <string name="medicalrecord_carstatus_title04">送往医院</string>
+    <string name="medicalrecord_carstatus_title05">到达医院</string>
+    <string name="medicalrecord_carstatus_title06">完成急救</string>
+    <!--健康档案-->
+    <string name="health_medicalrecords">就诊记录</string>
+    <string name="health_testresult">检查结果</string>
+    <string name="health_surgicalinformation">手术信息</string>
+    <string name="health_examresult">检验结果</string>
+    <!--必填信息标志-->
+    <string name="needfillflag">*</string>
+    <!--当前病历不可修改-->
+    <string name="notenable_toast">当前病历不可修改</string>
+    <string name="currentneterror_toast">网络离线,请检查网络状况</string>
+    <string name="title_activity_list_fragments">ListFragmentsActivity</string>
 </resources>

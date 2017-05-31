@@ -1,11 +1,61 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="AppTheme.Base">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MedicalRecordLeftBarRadioButtonStyle">
+        <!--android:drawablePadding="@dimen/dip_8"-->
+        <item name="android:padding">12px</item>
+        <item name="android:layout_width">300px</item>
+        <item name="android:layout_height">116px</item>
+
+        <item name="android:layout_marginBottom">2px</item>
+        <item name="android:textSize">32px</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/medicalrecord_leftbar_button_background</item>
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--配置toolbar的颜色，但是要在toolbar中进行设置才会起作用-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--配置系统栏的颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--配置整个窗口的背景颜色-->
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="ComponentInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">12px</item>
+        <item name="android:paddingRight">12px</item>
+        <item name="android:paddingTop">12px</item>
+        <item name="android:paddingBottom">12px</item>
+        <item name="android:textSize">38px</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:textColor">#444444</item>
+        <item name="android:background">@drawable/component_input_bg</item>
+    </style>
+
+    <style name="ComponentTitleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textSize">30px</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">10px</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

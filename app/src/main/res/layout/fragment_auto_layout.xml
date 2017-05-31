@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_alignParentLeft="true"
+        android:background="#ffffff"
+        android:layout_alignParentStart="true"
+        android:gravity="center|left">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12px"
+            android:paddingRight="12px"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电子病历"
+            android:textColor="@android:color/black"
+            android:textSize="36px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36px"
+            android:text="( 姓名:张一一 | 性别:男 | 年龄:30岁 )"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#cccccc"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:background="#2f3a4c"
+            android:layout_height="match_parent">
+            <xu.qiwei.com.todomvvmtest.widget.AutoRadioGroup
+                android:id="@+id/left_bar_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#545f71">
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic01"
+                    android:text="@string/medicalrecord_left_homepage_title" />
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic02"
+                    android:text="@string/medicalrecord_left_patientbaseinfo_title" />
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic03"
+                    android:text="@string/medicalrecord_left_patienthistory_title" />
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic04"
+                    android:text="@string/medicalrecord_left_phyexam_title"/>
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic05"
+                    android:text="@string/medicalrecord_left_phyexam_final_title" />
+
+                <RadioButton
+                    android:id="@+id/access_radiobtn"
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic06"
+                    android:text="@string/medicalrecord_left_specialassess_title"/>
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic07"
+                    android:text="@string/medicalrecord_left_digandtreat_title" />
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic08"
+                    android:text="@string/medicalrecord_left_treatresult_title"/>
+
+                <RadioButton
+                    android:id="@+id/referral_radiobutton"
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic10"
+                    android:text="@string/medicalrecord_left_referrallist_title" />
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic09"
+                    android:text="@string/medicalrecord_left_handoverrecord_title"/>
+
+                <RadioButton
+                    style="@style/MedicalRecordLeftBarRadioButtonStyle"
+                    android:button="@drawable/record_itemic11"
+                    android:text="@string/medicalrecord_left_emergencyresources_title"/>
+            </xu.qiwei.com.todomvvmtest.widget.AutoRadioGroup>
+
+        </ScrollView>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/auto_header_framelayout"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+
+                android:id="@+id/auto_main_framelayout"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

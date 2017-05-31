@@ -4,10 +4,8 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
@@ -16,10 +14,10 @@
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!--在SDCard中创建与删除文件权限  -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <!--  从SDCard读取数据权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 从SDCard读取数据权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".DemoApplication"
@@ -59,8 +57,40 @@
             android:name=".zxingtest.CaptureCusActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".flowlayout.view.FlowLayoutTestActivity" />
-        <activity android:name=".blueprint.views.PrintMainActivity"></activity>
-        <receiver android:name=".blueprint.receiver.BlueToothBroadcastReceiver"/>
+        <activity android:name=".blueprint.views.PrintMainActivity" />
+
+        <receiver android:name=".blueprint.receiver.BlueToothBroadcastReceiver" />
+
+        <activity
+            android:name=".autolayouttest.views.AutoLayoutTestActivity"
+            android:screenOrientation="landscape" />
+        <!--
+        <meta-data
+            android:name="design_width"
+            android:value="1080" />
+        <meta-data
+            android:name="design_height"
+            android:value="1920" />
+        -->
+        <meta-data
+            android:name="design_width"
+            android:value="1920" />
+        <meta-data
+            android:name="design_height"
+            android:value="1200" />
+
+        <activity android:name=".blueprintv2.BluePrinterV2Activity" />
+        <activity android:name=".activityloadmods.OneActivity" />
+        <activity android:name=".activityloadmods.TwoActivity" />
+        <activity
+            android:name=".activityloadmods.ThreeActivity"
+            android:launchMode="singleInstance" />
+        <activity android:name=".activityloadmods.FourActivity" />
+        <activity android:name=".commontest.TestActivity" />
+        <activity
+            android:name=".listviewwithfragments.ListFragmentsActivity"
+            android:label="@string/title_activity_list_fragments"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

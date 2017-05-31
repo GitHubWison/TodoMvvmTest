@@ -28,4 +28,12 @@ public interface TasksNavigator {
     void showToast(String maintest);
 
     void toPrintActivity();
+
+    void toAutoLayoutActivity();
+
+    void toBluePrintV2Activity();
+
+    void toLoadActivity();
+
+    void toShowTest();
 }

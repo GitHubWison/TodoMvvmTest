@@ -8,7 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import xu.qiwei.com.todomvvmtest.ActivityUtils.ActivityUtils;
+import xu.qiwei.com.todomvvmtest.activityloadmods.OneActivity;
+import xu.qiwei.com.todomvvmtest.autolayouttest.views.AutoLayoutTestActivity;
 import xu.qiwei.com.todomvvmtest.blueprint.views.PrintMainActivity;
+import xu.qiwei.com.todomvvmtest.blueprintv2.BluePrinterV2Activity;
+import xu.qiwei.com.todomvvmtest.commontest.TestActivity;
 import xu.qiwei.com.todomvvmtest.customkeyboard.KeyBoareTestV2Activity;
 import xu.qiwei.com.todomvvmtest.databinding.ActivityMainBinding;
 import xu.qiwei.com.todomvvmtest.databindingtest.TwoBindTestActivity;
@@ -131,6 +135,26 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void toPrintActivity() {
         startActivity(new Intent(this, PrintMainActivity.class));
+    }
+
+    @Override
+    public void toAutoLayoutActivity() {
+        startActivity(new Intent(this, AutoLayoutTestActivity.class));
+    }
+
+    @Override
+    public void toBluePrintV2Activity() {
+        startActivity(new Intent(this, BluePrinterV2Activity.class));
+    }
+
+    @Override
+    public void toLoadActivity() {
+        startActivity(new Intent(this, OneActivity.class));
+    }
+
+    @Override
+    public void toShowTest() {
+        startActivity(new Intent(this, TestActivity.class));
     }
 
 
