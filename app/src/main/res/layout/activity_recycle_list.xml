@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="viewmodel"
+        type="xu.qiwei.com.todomvvmtest.recyclelisttest.RecycleListViewModel"/>
+</data>
+    <!--<ListView-->
+        <!--android:id="@+id/main_listview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--/>-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <xu.qiwei.com.todomvvmtest.recyclelisttest.childs.views.RecycleView1
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewmodel="@{viewmodel.recyclevmone}"
+                />
+            <xu.qiwei.com.todomvvmtest.recyclelisttest.childs.views.RecycleView2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewmodel="@{viewmodel.recyclevmtwo}"
+                />
+            <xu.qiwei.com.todomvvmtest.recyclelisttest.childs.views.RecycleView3
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewmodel="@{viewmodel.recyclevmthree}"
+                />
+        </LinearLayout>
+    </ScrollView>
+</layout>

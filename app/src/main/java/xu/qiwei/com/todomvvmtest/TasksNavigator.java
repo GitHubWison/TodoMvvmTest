@@ -36,4 +36,10 @@ public interface TasksNavigator {
     void toLoadActivity();
 
     void toShowTest();
+
+    void tofragmentless();
+
+    void toVLayoutTest();
+
+    void toTakePhoto();
 }

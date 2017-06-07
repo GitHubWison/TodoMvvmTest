@@ -56,5 +56,14 @@ public class MainActivityViewModel {
     public void toShowTest(){
         tasksNavigator.toShowTest();
     }
+    public void tofragmentless(){
+        tasksNavigator.tofragmentless();
+    }
+    public void toVLayoutTest(){
+        tasksNavigator.toVLayoutTest();
+    }
+    public void toTakePhoto(){
+        tasksNavigator.toTakePhoto();
+    }
 
 }

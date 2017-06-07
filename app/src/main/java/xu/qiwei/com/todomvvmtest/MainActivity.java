@@ -20,10 +20,13 @@ import xu.qiwei.com.todomvvmtest.fingerprint.FingetTestActivity;
 import xu.qiwei.com.todomvvmtest.flowlayout.view.FlowLayoutTestActivity;
 import xu.qiwei.com.todomvvmtest.fragmentdialogtest.viewmodel.TestDialogViewModel;
 import xu.qiwei.com.todomvvmtest.fragmentdialogtest.views.TestFragmentDialog;
+import xu.qiwei.com.todomvvmtest.recyclelisttest.RecycleListActivity;
 import xu.qiwei.com.todomvvmtest.signtest.SignTestActivity;
+import xu.qiwei.com.todomvvmtest.takephoto.views.TakePhotoActivity;
 import xu.qiwei.com.todomvvmtest.tasks.TasksActivity;
 import xu.qiwei.com.todomvvmtest.threadpooltest.ThreadTestActivity;
 import xu.qiwei.com.todomvvmtest.timesync.TimeSyncActivity;
+import xu.qiwei.com.todomvvmtest.vlayouttest.VLayoutTestActivity;
 import xu.qiwei.com.todomvvmtest.zxingtest.ZXingTestActivity;
 
 public class MainActivity extends AppCompatActivity implements TasksNavigator{
@@ -155,6 +158,21 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void toShowTest() {
         startActivity(new Intent(this, TestActivity.class));
+    }
+
+    @Override
+    public void tofragmentless() {
+        startActivity(new Intent(this,RecycleListActivity.class));
+    }
+
+    @Override
+    public void toVLayoutTest() {
+        startActivity(new Intent(this, VLayoutTestActivity.class));
+    }
+
+    @Override
+    public void toTakePhoto() {
+        startActivity(new Intent(this, TakePhotoActivity.class));
     }
 
 

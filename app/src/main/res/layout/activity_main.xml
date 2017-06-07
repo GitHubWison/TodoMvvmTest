@@ -116,6 +116,24 @@
                 android:text="toShowTest"
                 android:onClick="@{()->viewmodel.toShowTest()}"
                 />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="tofragmentless"
+                android:onClick="@{()->viewmodel.tofragmentless()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="toVLayoutTest"
+                android:onClick="@{()->viewmodel.toVLayoutTest()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="takephoto"
+                android:onClick="@{()->viewmodel.toTakePhoto()}"
+                />
         </LinearLayout>
     </ScrollView>
 

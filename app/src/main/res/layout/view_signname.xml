@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="xu.qiwei.com.todomvvmtest.takephoto.views.childs.viewmodels.SignNameViewModel"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_height="match_parent">
+    </LinearLayout>
+</layout>
