@@ -8,8 +8,6 @@ package xu.qiwei.com.todomvvmtest;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 
 /**
  * Created by LuoZheng on 2016/8/23.
@@ -232,13 +230,13 @@ public class PermissionAdapter {
      */
     private boolean hasPermission(Activity activity, String[] permissions, int requestCode) {
         boolean hasPermisson = true;
-        for (String permission : permissions) {
-            if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(activity, permissions, requestCode);
-                hasPermisson = false;
-                break;
-            }
-        }
+//        for (String permission : permissions) {
+//            if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
+//                ActivityCompat.requestPermissions(activity, permissions, requestCode);
+//                hasPermisson = false;
+//                break;
+//            }
+//        }
         return hasPermisson;
     }
 }

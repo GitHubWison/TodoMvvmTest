@@ -7,12 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-
 import xu.qiwei.com.todomvvmtest.databinding.FragmentTaskdetailBinding;
-import xu.qiwei.com.todomvvmtest.tasks.Task;
-import xu.qiwei.com.todomvvmtest.tasks.TaskItemNavigator;
-import xu.qiwei.com.todomvvmtest.tasks.TasksFragment;
 
 /**
  * Created by xuqiwei on 17-2-15.
@@ -38,9 +33,9 @@ public class TaskDetailFragment extends Fragment {
     }
 
     private void setAdapter() {
-        TasksFragment.TaskAdapter taskAdapter = new TasksFragment.TaskAdapter(new ArrayList<Task>(0),getContext().getApplicationContext(),
-                (TaskItemNavigator) getActivity());
-        binding.testSpinner.setAdapter(taskAdapter);
+//        TasksFragment.TaskAdapter taskAdapter = new TasksFragment.TaskAdapter(new ArrayList<Task>(0),getContext().getApplicationContext(),
+//                (TaskItemNavigator) getActivity());
+//        binding.testSpinner.setAdapter(taskAdapter);
     }
 
     @Nullable

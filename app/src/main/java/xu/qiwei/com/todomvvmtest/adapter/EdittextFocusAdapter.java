@@ -4,6 +4,8 @@ import android.databinding.BindingAdapter;
 import android.view.View;
 import android.widget.EditText;
 
+import xu.qiwei.com.todomvvmtest.mutiprocess.MessageModel;
+
 /**
  * Created by xuqiwei on 17-3-22.
  */
@@ -14,6 +16,5 @@ public class EdittextFocusAdapter {
         editText.setShowSoftInputOnFocus(false);
         editText.setOnFocusChangeListener(onFocusChangeListener);
         editText.setOnTouchListener(onTouchListener);
-
     }
 }

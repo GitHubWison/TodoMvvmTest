@@ -1,5 +1,7 @@
 package xu.qiwei.com.todomvvmtest;
 
+import xu.qiwei.com.todomvvmtest.utils.SqliteCopy;
+
 /**
  * Created by xuqiwei on 17-2-10.
  */
@@ -64,6 +66,15 @@ public class MainActivityViewModel {
     }
     public void toTakePhoto(){
         tasksNavigator.toTakePhoto();
+    }
+    public void copySqlite(){
+        SqliteCopy.copySqlite();
+    }
+    public void toIFly(){
+        tasksNavigator.toIFly();
+    }
+    public void toMutiProcess(){
+        tasksNavigator.toMutiProcess();
     }
 
 }

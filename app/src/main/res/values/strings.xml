@@ -56,4 +56,5 @@
     <string name="notenable_toast">当前病历不可修改</string>
     <string name="currentneterror_toast">网络离线,请检查网络状况</string>
     <string name="title_activity_list_fragments">ListFragmentsActivity</string>
+    <string name="title_activity_process">ProcessActivity</string>
 </resources>

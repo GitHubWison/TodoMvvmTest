@@ -71,7 +71,7 @@ public class BluePrintDiviceListDialog extends DialogFragment implements BlueToo
         intentFilter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
         intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
         // 注册广播接收器，接收并处理搜索结果
-        getContext().registerReceiver(blueToothBroadcastReceiver, intentFilter);
+//        getContext().registerReceiver(blueToothBroadcastReceiver, intentFilter);
     }
 
     private void searchBluetooth() {
@@ -96,7 +96,7 @@ public class BluePrintDiviceListDialog extends DialogFragment implements BlueToo
             viewModel.setBlueDivices(blueDivices);
         }
         if (blueToothBroadcastReceiver != null) {
-            getContext().unregisterReceiver(blueToothBroadcastReceiver);
+//            getContext().unregisterReceiver(blueToothBroadcastReceiver);
         }
     }
 
@@ -104,7 +104,7 @@ public class BluePrintDiviceListDialog extends DialogFragment implements BlueToo
     public void dismiss() {
         super.dismiss();
         if (blueToothBroadcastReceiver != null) {
-            getContext().unregisterReceiver(blueToothBroadcastReceiver);
+//            getContext().unregisterReceiver(blueToothBroadcastReceiver);
         }
     }
 

@@ -20,6 +20,8 @@ import xu.qiwei.com.todomvvmtest.fingerprint.FingetTestActivity;
 import xu.qiwei.com.todomvvmtest.flowlayout.view.FlowLayoutTestActivity;
 import xu.qiwei.com.todomvvmtest.fragmentdialogtest.viewmodel.TestDialogViewModel;
 import xu.qiwei.com.todomvvmtest.fragmentdialogtest.views.TestFragmentDialog;
+import xu.qiwei.com.todomvvmtest.iflytest.views.IflyTestActivity;
+import xu.qiwei.com.todomvvmtest.mutiprocess.ProcessActivity;
 import xu.qiwei.com.todomvvmtest.recyclelisttest.RecycleListActivity;
 import xu.qiwei.com.todomvvmtest.signtest.SignTestActivity;
 import xu.qiwei.com.todomvvmtest.takephoto.views.TakePhotoActivity;
@@ -173,6 +175,16 @@ public class MainActivity extends AppCompatActivity implements TasksNavigator{
     @Override
     public void toTakePhoto() {
         startActivity(new Intent(this, TakePhotoActivity.class));
+    }
+
+    @Override
+    public void toIFly() {
+        startActivity(new Intent(this, IflyTestActivity.class));
+    }
+
+    @Override
+    public void toMutiProcess() {
+        startActivity(new Intent(this, ProcessActivity.class));
     }
 
 

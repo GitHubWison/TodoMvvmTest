@@ -134,6 +134,24 @@
                 android:text="takephoto"
                 android:onClick="@{()->viewmodel.toTakePhoto()}"
                 />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="copySqlite"
+                android:onClick="@{()->viewmodel.copySqlite()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="科大讯飞"
+                android:onClick="@{()->viewmodel.toIFly()}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="多进程"
+                android:onClick="@{()->viewmodel.toMutiProcess()}"
+                />
         </LinearLayout>
     </ScrollView>
 

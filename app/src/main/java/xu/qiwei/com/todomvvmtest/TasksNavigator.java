@@ -42,4 +42,8 @@ public interface TasksNavigator {
     void toVLayoutTest();
 
     void toTakePhoto();
+
+    void toIFly();
+
+    void toMutiProcess();
 }
